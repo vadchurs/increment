@@ -28,6 +28,9 @@ function App() {
 
   const onChangeMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
     setMaxValue(e.currentTarget.value)
+    if(incValue!==startValue){
+      setIncValue(startValue)
+    }
     localStorage.setItem("maxValue", e.currentTarget.value)
     if(Number(e.currentTarget.value)<1 || Number(e.currentTarget.value)<=Number(startValue)) {
       setIsError(true)
